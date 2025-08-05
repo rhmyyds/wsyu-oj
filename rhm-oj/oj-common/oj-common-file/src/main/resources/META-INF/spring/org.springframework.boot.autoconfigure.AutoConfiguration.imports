@@ -1,0 +1,3 @@
+com.rhm.common.file.service.OSSService
+com.rhm.common.file.config.OSSConfig
+com.rhm.common.file.config.OSSProperties

@@ -1,0 +1,17 @@
+#spring:
+#  application:
+#    name:  # 应⽤名称
+spring:
+  application:
+    name: oj-friend # 应⽤名称
+  profiles:
+    active: local
+  cloud:
+    nacos:
+      discovery: # ①服务注册：将应用服务注册到 Nacos 服务注册中心，使得其他服务可以发现并调用它。②服务发现：从 Nacos 服务注册中心获取其他服务的地址信息，实现服务间的通信
+        namespace: 25b45de2-9b36-4d6e-8cd5-393378680fb5 #命名空间
+        server-addr: http://localhost:8848
+      config: # 公共配置文件拉取
+        namespace: 25b45de2-9b36-4d6e-8cd5-393378680fb5
+        server-addr: http://localhost:8848
+        file-extension: yaml # 获取配置文件 ${spring.application.name}-${spring.profiles.active}.${file-extension}
